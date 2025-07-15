@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td colspan="4">
+                    <input type="text" id="inputBox" value="0"/>
+                </td>
+            </tr>
+            <tr>
+                <td onclick="digitBtnPressed(7)">7</td>
+                <td onclick="digitBtnPressed(8)">8</td>
+                <td onclick="digitBtnPressed(9)">9</td>
+                <td>X</td>
+            </tr>
+            <tr>
+                <td onclick="digitBtnPressed(4)">4</td>
+                <td onclick="digitBtnPressed(5)">5</td>
+                <td onclick="digitBtnPressed(6)">6</td>
+                <td onclick="operatorBtnPressed('-')">-</td>
+            </tr>
+            <tr>
+                <td onclick="digitBtnPressed(1)">1</td>
+                <td onclick="digitBtnPressed(2)">2</td>
+                <td onclick="digitBtnPressed(3)">3</td>
+                <td onclick="operatorBtnPressed('+')">+</td>
+            </tr>
+            <tr>
+                <td onclick="digitBtnPressed(0)" colspan="2">0</td>
+                <td onclick="btnACPressed()">AC</td>
+                <td onclick="operatorBtnPressed('/')">/</td>
+            </tr>
+            <tr>
+                <td colspan="4">=</td>
+            </tr>
+        </table>
+        <script>
+
+            var newLine = true; //reset the screen to initial value
+
+            function digitBtnPressed(button){
+                if(newLine){//shorthand of newLine == true
+                    document.getElementById("inputBox").value = button;
+                    newLine = false;
+                } else {
+                    var currentValue = document.getElementById("inputBox").value;
+                    document.getElementById("inputBox").value = currentValue + button;
+                }
+            }
+
+            function btnACPressed(){
+                document.getElementById("inputBox").value = 0;
+                newLine = true;
+            }
+
+            /*
+                Store on-screen value
+                Remember the operator
+                Clear screen when next digit typed
+            */
+           var value1;
+           var currentOperator;
+           
+           function operatorBtnPressed(operator){
+                currentOperator = operator;
+                value1 = parseInt(document.getElementById("inputBox").value);
+                newLine = true;
+           }
+        </script>
+    </body>
+</html>

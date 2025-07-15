@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <!--camelCase: looking at the naming conversion of this file each word starts with uppercase except the first word-->
+        <p id="outputText1"></p>
+        <p id="outputText2"></p>
+        <script>
+
+            var text1 = "four";
+            var text2 = "5";
+
+            var num1 = stringToNumber(text1);
+            var num2 = stringToNumber(text2);
+
+            //isNaN checks if variable is a number
+
+            if(isNaN(num1) || isNaN(num2)){
+                document.getElementById("outputText1").innerHTML = "You have not entered a valid number. Please try again";
+            } else {
+                document.getElementById("outputText1").innerHTML = num1 + num2;
+            }
+
+            text1 = "4";
+            text2 = "5";
+
+            num1 = stringToNumber(text1);
+            num2 = stringToNumber(text2);
+
+            //isNaN checks if variable is a number
+
+            if(isNaN(num1) || isNaN(num2)){
+                document.getElementById("outputText2").innerHTML = "You have not entered a valid number. Please try again";
+            } else {
+                document.getElementById("outputText2").innerHTML = num1 + num2;
+            }
+
+           function stringToNumber(text){
+                return parseInt(text); //converts text to a number
+           }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <!--camelCase: looking at the naming conversion of this file each word starts with uppercase except the first word-->
+        <p id="outputText"></p>
+        <script>
+            var text1 = "4";
+            var text2 = "5";
+
+            document.getElementById("outputText").innerHTML = text2 - text1; //output 1 //since its string of only numbers
+
+            text1 = "text";
+            text2 = "5";
+
+            document.getElementById("outputText").innerHTML = text2 - text1; //output: NAN
+
+            /*
+                but the above for subtracting numbers is dangerous even if it works* so rather: 
+            */
+           function stringToNumber(text){
+                return parseInt(text); //converts text to a number
+           }
+
+            text1 = "4";
+            text2 = "5";
+
+           var num1 = stringToNumber(text1);
+           var num2 = stringToNumber(text2);
+
+           document.getElementById("outputText").innerHTML = num1 + num2; //output 9 // no concatenation
+        </script>
+    </body>
+</html>

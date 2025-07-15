@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+       <p>Welcome please login</p>
+        <form>
+            <label for=”usernameInput”>Username:</label>
+            <input type=”text” id=”usernameInput”/>
+            <br/>
+            <label for=”passwordInput”>Password:</label>
+            <input type=”password” id=”passwordInput”/>
+            <br/>
+            <p id="message"></p>
+            <br/><br/>
+            <a href="#">Login</a>
+        </form>
+        <script>
+            function verifyUser(){
+                var username = document.getElementById("usernameInput").value;
+                var password = document.getElementById("passwordInput").value;
+            }
+        </script>
+    </body>
+</html>

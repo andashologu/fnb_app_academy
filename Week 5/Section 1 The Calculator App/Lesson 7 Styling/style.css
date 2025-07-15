@@ -1,0 +1,17 @@
+table{
+    color: #fff;
+    text-align: center;
+    border-collapse: collapse;
+    font: normal 3em Arial, Helvetica, sans-serif;
+}
+
+tr{
+    height: 16.67vh; /* 100/6 = 16.67 */
+    background-color: #4e494d;
+}
+
+td{
+    width: 25vw; /* 100/4 = 25% */
+    border: 1px solid #4e494d;
+}
+
